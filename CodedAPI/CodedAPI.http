@@ -1,0 +1,6 @@
+@CodedAPI_HostAddress = http://localhost:5273
+
+GET {{CodedAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
