@@ -48,5 +48,16 @@ namespace CodedAPI.Controllers
             return Ok(data);
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Product>> PutProduct(int? id,Product product)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var data = db.Products.FindAsync(id);
+            return Ok(data);
+        }
+
     }
 }
