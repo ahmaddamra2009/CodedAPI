@@ -1,5 +1,6 @@
 ﻿using CodedAPI.Data;
 using CodedAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +33,7 @@ namespace CodedAPI.Controllers
 
 
         [HttpGet]
+
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts() 
         {
             return Ok(await db.Products.ToListAsync());
@@ -48,7 +50,7 @@ namespace CodedAPI.Controllers
             return Ok(data);
         }
 
-        [HttpGet("{id}")]
+        [HttpPut("{id}")]
         public async Task<ActionResult<Product>> PutProduct(int? id,Product product)
         {
            
